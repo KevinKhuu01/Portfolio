@@ -351,6 +351,8 @@ p { margin: 0 0 12px; white-space: pre-line; }
 .transcript-note { color: var(--color-muted); font-style: italic; }
 
 .transcript-group { margin-top: 32px; }
+/* A divider line between schools (Ontario Tech, transfer credits, Centennial). */
+.transcript-group + .transcript-group { margin-top: 44px; padding-top: 28px; border-top: 1px solid #d5dbe1; }
 .transcript-group-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; }
 .transcript-group-title { margin: 0; font-size: 24px; font-weight: 500; color: var(--color-heading); }
 .transcript-group-gpa { font-size: 18px; font-weight: 500; color: var(--color-heading); }

@@ -660,7 +660,7 @@
     renderFooter(content);
 
     const ownerName = (content.profile && content.profile.name) || "Portfolio";
-    const pageTitles = { home: ownerName, transcript: `Unofficial Transcript · ${ownerName}`, resume: `Resume · ${ownerName}` };
+    const pageTitles = { home: `${ownerName} Portfolio`, transcript: "Unofficial Transcript", resume: `Resume · ${ownerName}` };
     document.title = pageTitles[PAGE_NAME] || ownerName;
   }
 
