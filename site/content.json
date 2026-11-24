@@ -62,7 +62,7 @@
           "location": "Oshawa, ON",
           "dates": "Jul 2026 – Present",
           "bullets": [
-            "Completed 60+ grading assignments within 48 hours while working within a 10-hour limit.",
+            "Completed 350+ grading assignments within 48 hours while working within a 10-hour limit.",
             "Ran weekly study hall sessions, answering students' questions for calculus and linear algebra.",
             "Shared study strategies and insight on how to be successful within post-secondary education."
           ]
@@ -104,7 +104,7 @@
           "dates": "Mar 2026 – Present",
           "bullets": [
             "Represented the Computer Science program at open house events, speaking with prospective students and discussing program opportunities.",
-            "Presented at large information sessions, delivering insight as a current Computer Science student."
+            "Presented at large information sessions, providing insight as a current Computer Science student."
           ]
         },
         {
@@ -182,11 +182,11 @@
         },
         {
           "category": "Machine Learning",
-          "items": "scikit-learn, Regression, k-NN, Decision Trees, Neural Networks (MLP), Hyperparameter Tuning, Time-Series Forecasting"
+          "items": "scikit-learn, Regression, k-NN, Decision Trees, Neural Networks (MLP), Hyperparameter Tuning"
         },
         {
           "category": "AI & APIs",
-          "items": "Google Gemini API, REST APIs, JSON"
+          "items": "Claude Code (CLI), Codex, Google Gemini API, REST APIs, JSON"
         },
         {
           "category": "Frameworks & Libraries",
@@ -974,7 +974,7 @@
   },
   "resume": {
     "title": "Resume",
-    "pdf_url": "files/resume-20261123-203637-c35d80.pdf"
+    "pdf_url": "files/resume-20261123-211635-1ede46.pdf"
   },
   "last_updated": "2026-11-23"
 }
