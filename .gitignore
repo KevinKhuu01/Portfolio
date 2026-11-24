@@ -1,0 +1,14 @@
+# Only the published website goes to GitHub: the site folder, Netlify's settings and this file.
+# Everything else (the editor, its password hash and backups, the Mac app, the README and the
+# private originals in "content to give") stays on this computer.
+/*
+!/site/
+!/netlify.toml
+!/.gitignore
+
+# Temporary files the editor writes while saving or uploading
+site/.content.json.tmp
+site/**/.*.tmp
+
+__pycache__/
+.DS_Store

@@ -1,0 +1,980 @@
+{
+  "profile": {
+    "name": "Kevin Khuu",
+    "role": "Computer Science Student",
+    "school": "Ontario Tech University",
+    "program": "Bachelor of Science (Honours), Computer Science",
+    "expected_graduation": "April 2028",
+    "gpa": "4.25 / 4.30",
+    "headshot": "images/headshot-20261123-185334-9617c1.jpg",
+    "headshot_alt": "Headshot",
+    "links": [
+      {
+        "label": "Email: KevinKhuu01@gmail.com",
+        "url": "mailto:kevinkhuu01@gmail.com"
+      },
+      {
+        "label": "Student Email: Kevin.Khuu@ontariotechu.net",
+        "url": "mailto:kevin.khuu@ontariotechu.net"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/KevinKhuu01"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/kevin-khuu-680506358/"
+      },
+      {
+        "label": "Discord",
+        "url": "https://discord.com/users/1381097646785036290"
+      }
+    ],
+    "specialization": "Artificial Intelligence Specialization",
+    "share_description": "",
+    "site_url": ""
+  },
+  "sections": [
+    {
+      "id": "news",
+      "title": "News",
+      "type": "news",
+      "items": [],
+      "menu_label": "News"
+    },
+    {
+      "id": "about",
+      "title": "About Me",
+      "type": "about",
+      "body": "",
+      "interests_title": "Interests",
+      "items": [],
+      "menu_label": "About me"
+    },
+    {
+      "id": "current-positions",
+      "title": "Current Positions",
+      "type": "entries",
+      "items": [
+        {
+          "title": "Teaching Assistant & Peer Educator",
+          "organization": "Ontario Tech University",
+          "location": "Oshawa, ON",
+          "dates": "Jul 2026 – Present",
+          "bullets": [
+            "Completed 60+ grading assignments within 48 hours while working within a 10-hour limit.",
+            "Ran weekly study hall sessions, answering students' questions for calculus and linear algebra.",
+            "Shared study strategies and insight on how to be successful within post-secondary education."
+          ]
+        }
+      ],
+      "menu_label": "Current Positions",
+      "menu_parent": "about"
+    },
+    {
+      "id": "experience",
+      "title": "Experience",
+      "type": "entries",
+      "items": [
+        {
+          "title": "Team Leader",
+          "organization": "Follett Bookstores Canada",
+          "location": "Toronto, ON",
+          "dates": "Sep 2024 – Sep 2026",
+          "bullets": [
+            "Improved operational efficiency and productivity by implementing standardized processes for task management and procedures to handle higher customer volumes.",
+            "Coordinated with faculty and students to ensure accurate delivery of course materials and information.",
+            "Trained 20+ employees on store operations, software systems, and customer service."
+          ]
+        }
+      ],
+      "menu_label": "Experience"
+    },
+    {
+      "id": "volunteer",
+      "title": "Volunteer Experience",
+      "type": "entries",
+      "menu_label": "Volunteer",
+      "menu_parent": "experience",
+      "items": [
+        {
+          "title": "Computer Science Student Representative",
+          "organization": "Ontario Tech University",
+          "location": "Oshawa, ON",
+          "dates": "Mar 2026 – Present",
+          "bullets": [
+            "Represented the Computer Science program at open house events, speaking with prospective students and discussing program opportunities.",
+            "Presented at large information sessions, delivering insight as a current Computer Science student."
+          ]
+        },
+        {
+          "title": "Event Volunteer",
+          "organization": "East Scarborough Storefront",
+          "dates": "Jan 2013 – Jun 2019",
+          "bullets": [
+            "Volunteered 700+ hours to community engagement.",
+            "Organized and facilitated events, led youth initiatives, and co-led an overnight community reform conference.",
+            "Supported the employment services lab by assisting clients and providing guidance as a dedicated volunteer."
+          ],
+          "location": "",
+          "description": "",
+          "link_url": "",
+          "link_label": ""
+        }
+      ]
+    },
+    {
+      "id": "awards",
+      "title": "Awards & Honours",
+      "type": "entries",
+      "items": [
+        {
+          "title": "President's List",
+          "organization": "Ontario Tech University",
+          "dates": "Fall 2025, Winter 2026"
+        },
+        {
+          "title": "High Honours",
+          "organization": "Centennial College",
+          "dates": "Fall 2024, Winter 2025"
+        },
+        {
+          "title": "Alienware Esports Scholarship",
+          "organization": "Dell Technologies | Alienware Corporation",
+          "dates": "Mar 2025"
+        },
+        {
+          "title": "Paul Harris Award",
+          "organization": "Rotary Club North Scarborough",
+          "dates": "Jun 2019",
+          "description": "Awarded for academic excellence and community leadership."
+        },
+        {
+          "title": "David Rowan Award of Leadership",
+          "organization": "RH King Academy",
+          "dates": "Jun 2019",
+          "description": "Awarded for outstanding community service and leadership commitments."
+        },
+        {
+          "title": "Award of Merit",
+          "organization": "RH King Academy",
+          "dates": "Jun 2019",
+          "description": "Awarded for outstanding contributions to community service."
+        },
+        {
+          "title": "Canada 150 Sesquicentennial Pin | MP John McKay Volunteer Appreciation Award",
+          "organization": "John McKay, Member of Parliament",
+          "dates": "Sep 2017",
+          "description": "Awarded for outstanding volunteering contributions to the East Scarborough community."
+        }
+      ],
+      "menu_label": "Awards & Honours",
+      "menu_parent": "about"
+    },
+    {
+      "id": "tech-stack",
+      "title": "Tech Stack",
+      "type": "tech",
+      "items": [
+        {
+          "category": "Languages",
+          "items": "Python, Java, C#, SQL, JavaScript, HTML/CSS"
+        },
+        {
+          "category": "Machine Learning",
+          "items": "scikit-learn, Regression, k-NN, Decision Trees, Neural Networks (MLP), Hyperparameter Tuning, Time-Series Forecasting"
+        },
+        {
+          "category": "AI & APIs",
+          "items": "Google Gemini API, REST APIs, JSON"
+        },
+        {
+          "category": "Frameworks & Libraries",
+          "items": "NumPy, pandas, SciPy, Matplotlib, OpenCV, Flask, .NET, Java Swing"
+        },
+        {
+          "category": "Databases",
+          "items": "Oracle Database, SQLite"
+        },
+        {
+          "category": "Tools",
+          "items": "Git, GitHub, Jira, Jupyter, Maven, Netlify, VS Code"
+        }
+      ],
+      "menu_label": "Tech Stack",
+      "menu_parent": "projects"
+    },
+    {
+      "id": "projects",
+      "title": "Projects",
+      "type": "entries",
+      "items": [
+        {
+          "title": "KK Quiz Maker",
+          "organization": "HTML, CSS, JavaScript",
+          "dates": "Nov 2026",
+          "link_url": "https://github.com/KevinKhuu01/KK-Quiz-Maker",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "Turns notes, slides, or readings into an interactive multiple-choice quiz: paste AI-generated questions as JSON and get instant feedback, a timer, and a review of missed questions."
+          ]
+        },
+        {
+          "title": "Tutor-U",
+          "organization": "Python, Flask, Gemini API, JavaScript, HTML/CSS",
+          "dates": "In development",
+          "link_url": "https://github.com/KevinKhuu01/Tutor-U",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "Built an AI study tool for post-secondary students focused on providing tutoring responses using user-inputted content and conversation history. Developed with RESTful API calls and responses."
+          ]
+        },
+        {
+          "title": "Toronto Traffic Volume Forecasting",
+          "organization": "Python, Jupyter Notebook, Machine Learning",
+          "dates": "Sep 2026",
+          "link_url": "https://github.com/KevinKhuu01/Machine-Learning-Project",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "Machine learning project forecasting traffic volume in Toronto."
+          ]
+        },
+        {
+          "title": "OTech BlackJack",
+          "organization": "Maven, Java, Java Swing",
+          "dates": "Apr 2026",
+          "link_url": "https://github.com/KevinKhuu01/OTech_BlackJack",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "Developed a full-stack application incorporating Java Swing for UI/UX, SQLite for an accounts database with BCrypt password hashing, multiplayer functionality, and a multi-threaded client-server messaging system."
+          ]
+        },
+        {
+          "title": "Pokedex",
+          "organization": "PokeAPI, HTML, CSS, JavaScript",
+          "dates": "Jan 2026",
+          "link_url": "https://github.com/KevinKhuu01/JavaScript-API-Practice-Pokedex",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "Built and deployed an asynchronous web application featuring a search interface that fetches and renders JSON objects from a RESTful API."
+          ]
+        },
+        {
+          "title": "Static Website: COMP 213 Final Project",
+          "organization": "HTML, CSS",
+          "dates": "Jan 2026",
+          "link_url": "https://github.com/KevinKhuu01/HTML-CSS-Static-Website",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "A responsive, accessible multi-page website built with only HTML and CSS, using a grid layout that adapts to mobile devices."
+          ]
+        },
+        {
+          "title": "Airline Database: COMP 122 Final Assignment",
+          "organization": "Oracle SQL",
+          "dates": "Jan 2026",
+          "link_url": "https://github.com/KevinKhuu01/Oracle-SQL-Practice-Assignment",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "Group project: an Oracle SQL database simulating an airline's internal system, using constraints, joins, subqueries, and aggregations."
+          ]
+        },
+        {
+          "title": "Banking System Simulation",
+          "organization": "C#, GitHub, Jira",
+          "dates": "Jan 2026",
+          "link_url": "https://github.com/KevinKhuu01/Banking-System",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "Developed core backend functionality for a simulated internal banking system using C#.",
+            "Implemented classes, resolved merge conflicts, and debugged code. Coordinated tasks within a team using Jira and Microsoft Office."
+          ]
+        },
+        {
+          "title": "Worst Login UI Challenge",
+          "organization": "JavaScript, HTML, CSS, Node.js",
+          "dates": "Jan 2026",
+          "link_url": "https://github.com/KevinKhuu01/JavaScript-Practice-Worst-Login-UI-Challenge",
+          "link_label": "GitHub repository",
+          "bullets": [
+            "A deliberately frustrating login page, built as JavaScript practice."
+          ]
+        }
+      ],
+      "menu_label": "Projects"
+    },
+    {
+      "id": "academics",
+      "title": "Academics",
+      "type": "page_link",
+      "body": "Ontario Tech University: Cumulative GPA 4.25 / 4.30 · President's List\nCentennial College: Cumulative GPA 4.50 / 4.50 · High Honours",
+      "page": "transcript",
+      "link_label": "Click here for my unofficial transcript",
+      "menu_label": "Academics"
+    },
+    {
+      "id": "course-map",
+      "title": "Course Map",
+      "type": "course_map",
+      "menu_label": "Course Map",
+      "menu_parent": "academics",
+      "body": "My path through the Honours BSc in Computer Science, Specialization in Artificial Intelligence.",
+      "items": [
+        {
+          "term": "Transfer credits",
+          "note": "30 credit hours",
+          "courses": [
+            {
+              "code": "CSCI 1060U",
+              "title": "Programming Workshop I",
+              "status": "transfer"
+            },
+            {
+              "code": "CSCI 1030U",
+              "title": "Intro to Computer Science",
+              "status": "transfer"
+            },
+            {
+              "code": "STAT 2010U",
+              "title": "Statistics & Probability",
+              "status": "transfer"
+            },
+            {
+              "code": "UNSP 1XXX",
+              "title": "General Elective",
+              "status": "transfer"
+            },
+            {
+              "code": "ECON 2020U",
+              "title": "Macroeconomics",
+              "status": "transfer"
+            },
+            {
+              "code": "CSCI 1061U",
+              "title": "Programming Workshop II",
+              "status": "transfer"
+            },
+            {
+              "code": "CSCI 3230U",
+              "title": "Web Development",
+              "status": "transfer"
+            },
+            {
+              "code": "CSCI 2040U",
+              "title": "Software Design & Analysis",
+              "status": "transfer"
+            },
+            {
+              "code": "UNSP 2XXX",
+              "title": "General Elective",
+              "status": "transfer"
+            },
+            {
+              "code": "ECON 2010U",
+              "title": "Microeconomics",
+              "status": "transfer"
+            }
+          ]
+        },
+        {
+          "term": "Fall 2025",
+          "courses": [
+            {
+              "code": "CSCI 2010U",
+              "title": "Data Structures",
+              "status": "complete"
+            },
+            {
+              "code": "MATH 1000U",
+              "title": "Introductory Calculus",
+              "status": "complete"
+            },
+            {
+              "code": "PHY 1030U",
+              "title": "Introductory Physics",
+              "status": "complete"
+            },
+            {
+              "code": "BUSI 1700U",
+              "title": "Intro to Entrepreneurship",
+              "status": "complete"
+            },
+            {
+              "code": "COMM 1050U",
+              "title": "Technical Communications",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "term": "Winter 2026",
+          "courses": [
+            {
+              "code": "CSCI 2020U",
+              "title": "Software Systems Development & Integration",
+              "status": "complete"
+            },
+            {
+              "code": "CSCI 2050U",
+              "title": "Computer Architecture I",
+              "status": "complete"
+            },
+            {
+              "code": "MATH 1020U",
+              "title": "Calculus II",
+              "status": "complete"
+            },
+            {
+              "code": "PHY 1020U",
+              "title": "Physics II",
+              "status": "complete"
+            },
+            {
+              "code": "ENVS 1000U",
+              "title": "Environmental Science",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "term": "Summer 2026",
+          "courses": [
+            {
+              "code": "CSCI 2110U",
+              "title": "Discrete Mathematics",
+              "status": "complete"
+            },
+            {
+              "code": "MATH 2050U",
+              "title": "Linear Algebra",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "term": "Fall 2026",
+          "courses": [
+            {
+              "code": "CSCI 2000U",
+              "title": "Scientific Data Analysis",
+              "status": "in_progress"
+            },
+            {
+              "code": "CSCI 3070U",
+              "title": "Analysis & Design of Algorithms",
+              "status": "in_progress"
+            },
+            {
+              "code": "CSCI 3052U",
+              "title": "Machine Learning I",
+              "status": "in_progress"
+            },
+            {
+              "code": "CSCI 3240U",
+              "title": "Computer Vision I",
+              "status": "in_progress"
+            },
+            {
+              "code": "CSCI 4040U",
+              "title": "Ethics, Law & Social Impacts of Computing",
+              "status": "in_progress"
+            }
+          ]
+        },
+        {
+          "term": "Winter 2027",
+          "courses": [
+            {
+              "code": "CSCI 2072U",
+              "title": "Computational Science I",
+              "status": "registered"
+            },
+            {
+              "code": "CSCI 4610U",
+              "title": "Artificial Intelligence",
+              "status": "registered"
+            },
+            {
+              "code": "CSCI 3540U",
+              "title": "Software Security",
+              "status": "registered"
+            },
+            {
+              "code": "CSCI 4230U",
+              "title": "Advanced Web Development",
+              "status": "registered"
+            },
+            {
+              "code": "CSCI 3030U",
+              "title": "Database Systems & Concepts",
+              "status": "registered"
+            }
+          ]
+        },
+        {
+          "term": "Fall 2027",
+          "note": "Year 4",
+          "courses": [
+            {
+              "code": "CSCI 4140U",
+              "title": "Quantum Computing",
+              "status": "planned"
+            },
+            {
+              "code": "CSCI 4052U",
+              "title": "Machine Learning II",
+              "status": "planned"
+            },
+            {
+              "code": "MATH 3035U",
+              "title": "Mathematics of Machine Learning",
+              "status": "planned"
+            },
+            {
+              "title": "Systems Elective: Computer Graphics",
+              "status": "planned"
+            },
+            {
+              "title": "Honours Thesis",
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "term": "Winter 2028",
+          "note": "Year 4",
+          "courses": [
+            {
+              "code": "CSCI 4150U",
+              "title": "Data Mining",
+              "status": "planned"
+            },
+            {
+              "title": "Non-CS Elective (TBD)",
+              "status": "planned"
+            },
+            {
+              "code": "STAT 3020U",
+              "title": "Statistical Methods for Data Science",
+              "status": "planned"
+            },
+            {
+              "code": "CSCI 4055U",
+              "title": "Natural Language Processing",
+              "status": "planned"
+            },
+            {
+              "title": "Honours Thesis (continued)",
+              "status": "planned"
+            }
+          ]
+        }
+      ],
+      "prior_title": "Centennial College (transferred)",
+      "prior_note": "Software Engineering Technician · Fall 2024 – Winter 2025 · GPA 4.50 / 4.50",
+      "prior_items": [
+        {
+          "term": "Fall 2024",
+          "courses": [
+            {
+              "code": "COMP 100",
+              "title": "Programming 1",
+              "status": "complete"
+            },
+            {
+              "code": "COMP 120",
+              "title": "Software Engineering Fundamentals",
+              "status": "complete"
+            },
+            {
+              "code": "COMP 213",
+              "title": "Web Interface Design",
+              "status": "complete"
+            },
+            {
+              "code": "MATH 175",
+              "title": "Functions & Number Systems",
+              "status": "complete"
+            },
+            {
+              "code": "COMM 170",
+              "title": "College Communications 2",
+              "status": "complete"
+            },
+            {
+              "code": "GNED 144",
+              "title": "Developmental Psychology",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "term": "Winter 2025",
+          "courses": [
+            {
+              "code": "COMP 122",
+              "title": "Introduction to Database Concepts",
+              "status": "complete"
+            },
+            {
+              "code": "COMP 123",
+              "title": "Programming 2",
+              "status": "complete"
+            },
+            {
+              "code": "COMP 125",
+              "title": "Client-Side Web Development",
+              "status": "complete"
+            },
+            {
+              "code": "COMP 225",
+              "title": "Software Requirements Engineering",
+              "status": "complete"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resume",
+      "title": "Resume",
+      "type": "page_link",
+      "body": "",
+      "page": "resume",
+      "link_label": "Click here to open my resume (PDF)",
+      "menu_label": "Resume"
+    }
+  ],
+  "transcript": {
+    "title": "Unofficial Transcript",
+    "groups": [
+      {
+        "title": "Ontario Tech University",
+        "subtitle": "Honours BSc, Computer Science (Co-op) · Specialization in Artificial Intelligence",
+        "terms": [
+          {
+            "term": "Fall 2025",
+            "term_gpa": "4.24",
+            "standing": "President's List",
+            "courses": [
+              {
+                "code": "BUSI 1700U",
+                "title": "Introduction to Entrepreneurship",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "COMM 1050U",
+                "title": "Technical Communications",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "CSCI 2010U",
+                "title": "Data Structures",
+                "credits": "3.0",
+                "grade": "A"
+              },
+              {
+                "code": "MATH 1000U",
+                "title": "Introductory Calculus",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "PHY 1030U",
+                "title": "Introductory Physics",
+                "credits": "3.0",
+                "grade": "A+"
+              }
+            ]
+          },
+          {
+            "term": "Winter 2026",
+            "term_gpa": "4.24",
+            "standing": "President's List",
+            "courses": [
+              {
+                "code": "CSCI 2020U",
+                "title": "Software Systems Development & Integration",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "CSCI 2050U",
+                "title": "Computer Architecture I",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "ENVS 1000U",
+                "title": "Environmental Science",
+                "credits": "3.0",
+                "grade": "A"
+              },
+              {
+                "code": "MATH 1020U",
+                "title": "Calculus II",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "PHY 1020U",
+                "title": "Physics II",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "SCCO 0999U",
+                "title": "Science Co-op Success Program",
+                "credits": "0.0",
+                "grade": "Pass"
+              }
+            ]
+          },
+          {
+            "term": "Spring/Summer 2026",
+            "term_gpa": "4.30",
+            "courses": [
+              {
+                "code": "CSCI 2110U",
+                "title": "Discrete Mathematics for Computer Science",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "MATH 2050U",
+                "title": "Linear Algebra",
+                "credits": "3.0",
+                "grade": "A+"
+              }
+            ]
+          },
+          {
+            "term": "Fall 2026",
+            "standing": "In progress",
+            "courses": [
+              {
+                "code": "CSCI 2000U",
+                "title": "Scientific Data Analysis",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 3052U",
+                "title": "Machine Learning I",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 3070U",
+                "title": "Analysis & Design of Algorithms",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 3240U",
+                "title": "Computer Vision I",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 4040U",
+                "title": "Ethics, Law & Social Impacts of Computing",
+                "credits": "3.0",
+                "grade": ""
+              }
+            ]
+          },
+          {
+            "term": "Winter 2027",
+            "standing": "Registered",
+            "courses": [
+              {
+                "code": "CSCI 2072U",
+                "title": "Computational Science I",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 3030U",
+                "title": "Database Systems & Concepts",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 3540U",
+                "title": "Software Security",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 4230U",
+                "title": "Advanced Web Development",
+                "credits": "3.0",
+                "grade": ""
+              },
+              {
+                "code": "CSCI 4610U",
+                "title": "Artificial Intelligence",
+                "credits": "3.0",
+                "grade": ""
+              }
+            ]
+          }
+        ],
+        "gpa": "4.25 / 4.30"
+      },
+      {
+        "title": "Transfer credits",
+        "subtitle": "Credited toward my Ontario Tech degree · 30 credit hours",
+        "terms": [
+          {
+            "term": "From Centennial College",
+            "courses": [
+              {
+                "code": "CSCI 1060U",
+                "title": "Programming Workshop I",
+                "credits": "3.0",
+                "grade": "Transfer"
+              },
+              {
+                "code": "CSCI 1061U",
+                "title": "Programming Workshop II",
+                "credits": "3.0",
+                "grade": "Transfer"
+              },
+              {
+                "code": "CSCI 2040U",
+                "title": "Software Design & Analysis",
+                "credits": "3.0",
+                "grade": "Transfer"
+              },
+              {
+                "code": "CSCI 3230U",
+                "title": "Web Development",
+                "credits": "3.0",
+                "grade": "Transfer"
+              }
+            ]
+          },
+          {
+            "term": "From Brock University",
+            "courses": [
+              {
+                "code": "CSCI 1030U",
+                "title": "Introduction to Computer Science",
+                "credits": "3.0",
+                "grade": "Transfer"
+              },
+              {
+                "code": "ECON 2010U",
+                "title": "Microeconomics",
+                "credits": "3.0",
+                "grade": "Transfer"
+              },
+              {
+                "code": "ECON 2020U",
+                "title": "Macroeconomics",
+                "credits": "3.0",
+                "grade": "Transfer"
+              },
+              {
+                "code": "STAT 2010U",
+                "title": "Statistics & Probability for Physical Science",
+                "credits": "3.0",
+                "grade": "Transfer"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Centennial College",
+        "subtitle": "Software Engineering Technician (transferred to Ontario Tech)",
+        "terms": [
+          {
+            "term": "Fall 2024",
+            "term_gpa": "4.50",
+            "courses": [
+              {
+                "code": "COMM 170",
+                "title": "College Communications 2",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "COMP 100",
+                "title": "Programming 1",
+                "credits": "4.0",
+                "grade": "A+"
+              },
+              {
+                "code": "COMP 120",
+                "title": "Software Engineering Fundamentals",
+                "credits": "4.0",
+                "grade": "A+"
+              },
+              {
+                "code": "COMP 213",
+                "title": "Web Interface Design",
+                "credits": "4.0",
+                "grade": "A+"
+              },
+              {
+                "code": "GNED 144",
+                "title": "Developmental Psychology",
+                "credits": "3.0",
+                "grade": "A+"
+              },
+              {
+                "code": "MATH 175",
+                "title": "Functions & Number Systems",
+                "credits": "3.0",
+                "grade": "A+"
+              }
+            ]
+          },
+          {
+            "term": "Winter 2025",
+            "term_gpa": "4.50",
+            "courses": [
+              {
+                "code": "COMP 122",
+                "title": "Introduction to Database Concepts",
+                "credits": "4.0",
+                "grade": "A+"
+              },
+              {
+                "code": "COMP 123",
+                "title": "Programming 2",
+                "credits": "4.0",
+                "grade": "A+"
+              },
+              {
+                "code": "COMP 125",
+                "title": "Client-Side Web Development",
+                "credits": "4.0",
+                "grade": "A+"
+              },
+              {
+                "code": "COMP 225",
+                "title": "Software Requirements Engineering",
+                "credits": "4.0",
+                "grade": "A+"
+              }
+            ]
+          }
+        ],
+        "gpa": "4.50 / 4.50"
+      }
+    ],
+    "documents_label": "View documented unofficial transcripts (PDF)",
+    "documents_pdf_url": "files/transcript-20261123-200610-617a21.pdf"
+  },
+  "resume": {
+    "title": "Resume",
+    "pdf_url": "files/resume-20261123-203637-c35d80.pdf"
+  },
+  "last_updated": "2026-11-23"
+}
