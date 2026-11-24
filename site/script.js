@@ -224,25 +224,44 @@
     return parentSection;
   }
 
+  function setMenuItemOpen(menuItem, shouldOpen) {
+    menuItem.classList.toggle("is-open", shouldOpen);
+    const toggleButton = menuItem.querySelector(".menu-dropdown-toggle");
+    if (toggleButton) toggleButton.setAttribute("aria-expanded", String(shouldOpen));
+  }
+
   function closeAllMenuDropdowns(exceptMenuItem) {
     for (const openMenuItem of document.querySelectorAll("#menu .menu-item.is-open")) {
-      if (openMenuItem === exceptMenuItem) continue;
-      openMenuItem.classList.remove("is-open");
-      const toggleButton = openMenuItem.querySelector(".menu-dropdown-toggle");
-      if (toggleButton) toggleButton.setAttribute("aria-expanded", "false");
+      if (openMenuItem !== exceptMenuItem) setMenuItemOpen(openMenuItem, false);
     }
   }
 
-  // Clicking anywhere else, or pressing Escape, closes an open dropdown. Added once per page.
+  function setCompactMenuExpanded(shouldExpand) {
+    const menuElement = document.getElementById("menu");
+    const compactToggle = menuElement && menuElement.querySelector(".menu-compact-toggle");
+    if (!compactToggle || menuElement.classList.contains("is-compact-expanded") === shouldExpand) return;
+    menuElement.classList.toggle("is-compact-expanded", shouldExpand);
+    compactToggle.setAttribute("aria-expanded", String(shouldExpand));
+    compactToggle.setAttribute("aria-label", shouldExpand ? "Close menu" : "Open menu");
+  }
+
+  // Clicking anywhere else, or pressing Escape, closes an open dropdown (and the phone menu panel).
+  // Choosing a link in the phone menu panel closes the panel. Added once per page.
   let menuDropdownListenersAdded = false;
   function addMenuDropdownListeners() {
     if (menuDropdownListenersAdded) return;
     menuDropdownListenersAdded = true;
     document.addEventListener("click", (clickEvent) => {
-      closeAllMenuDropdowns(clickEvent.target.closest ? clickEvent.target.closest("#menu .menu-item") : null);
+      const clickedElement = clickEvent.target.closest ? clickEvent.target : null;
+      closeAllMenuDropdowns(clickedElement ? clickedElement.closest("#menu .menu-item") : null);
+      const clickedInsideCompactMenu = Boolean(clickedElement && clickedElement.closest(".menu-compact"));
+      const clickedCompactLink = Boolean(clickedElement && clickedElement.closest(".menu-compact a"));
+      if (!clickedInsideCompactMenu || clickedCompactLink) setCompactMenuExpanded(false);
     });
     document.addEventListener("keydown", (keyEvent) => {
-      if (keyEvent.key === "Escape") closeAllMenuDropdowns(null);
+      if (keyEvent.key !== "Escape") return;
+      closeAllMenuDropdowns(null);
+      setCompactMenuExpanded(false);
     });
   }
 
@@ -253,89 +272,110 @@
     return !hasBody && asList(section.items).length === 0 && asList(section.prior_items).length === 0;
   }
 
+  /* The menu. A section with other sections under it becomes a button (its menu name, e.g. "Academics ▾")
+     that only opens a dropdown; the dropdown lists that section itself by its title, then the others.
+     A section without any becomes a plain link. On phones the same list is shown as a vertical list, and once
+     it scrolls out of view a small "Menu" bar at the top opens a second copy of it. */
   function renderMenu(content, editing) {
     const menuElement = document.getElementById("menu");
-    const menuList = createElement("ul", { className: "menu-list" });
     const sectionLinkPrefix = PAGE_NAME === "home" ? "" : "index.html";
-    const sections = asList(content.sections).filter((section) => section && section.id && (editing || !isSectionEmpty(section)));
-    const sectionsById = new Map(sections.map((section) => [section.id, section]));
+    const allSections = asList(content.sections).filter((section) => section && section.id);
+    const sectionsById = new Map(allSections.map((section) => [section.id, section]));
+    const isShown = (section) => editing || !isSectionEmpty(section);
 
-    function createSectionLink(section) {
-      // On the transcript or resume page, highlight the section that links to it.
-      const isCurrentPage = section.type === "page_link" && section.page === PAGE_NAME;
+    // On the transcript or resume page, mark the section that links to it.
+    const linksToCurrentPage = (section) => section.type === "page_link" && section.page === PAGE_NAME;
+
+    function createSectionLink(section, linkText) {
       return createElement("a", {
-        text: getSectionMenuLabel(section),
-        attributes: { href: `${sectionLinkPrefix}#${section.id}`, "aria-current": isCurrentPage ? "page" : null },
+        text: linkText,
+        attributes: { href: `${sectionLinkPrefix}#${section.id}`, "aria-current": linksToCurrentPage(section) ? "page" : null },
       });
     }
 
-    // A link straight to the page a "page_link" section points to (e.g. "Unofficial Transcript"),
-    // shown first in that section's dropdown.
-    function createLinkedPageLink(section) {
-      if (section.type !== "page_link") return null;
-      if (section.page === "transcript") {
-        const transcriptTitle = (content.transcript && content.transcript.title) || "Unofficial Transcript";
-        return createElement("a", {
-          text: transcriptTitle,
-          attributes: { href: LINKABLE_PAGES.transcript.href, "aria-current": PAGE_NAME === "transcript" ? "page" : null },
-        });
-      }
-      const resumePdfUrl = section.page === "resume" && content.resume ? toSafeUrl(content.resume.pdf_url) : null;
-      if (resumePdfUrl) return createElement("a", { text: "Resume (PDF)", attributes: { href: resumePdfUrl, target: "_blank", rel: "noopener" } });
-      return null;
-    }
+    function buildMenuList(listIdPrefix) {
+      const menuList = createElement("ul", { className: "menu-list" });
+      for (const section of allSections) {
+        if (getMenuParent(section, sectionsById)) continue;
+        const childSections = allSections.filter((otherSection) => isShown(otherSection) && getMenuParent(otherSection, sectionsById) === section);
+        // The section's own entry goes first in its dropdown, or last if set so in the editor's Edit menu.
+        const ownEntry = isShown(section) ? [section] : [];
+        const dropdownSections = section.dropdown_position === "last" ? childSections.concat(ownEntry) : ownEntry.concat(childSections);
 
-    for (const section of sections) {
-      if (getMenuParent(section, sectionsById)) continue;
-      const childSections = sections.filter((otherSection) => getMenuParent(otherSection, sectionsById) === section);
-      const menuItem = createElement("li", { className: "menu-item" }, [createSectionLink(section)]);
+        if (!childSections.length) {
+          if (isShown(section)) menuList.appendChild(createElement("li", { className: "menu-item" }, [createSectionLink(section, getSectionMenuLabel(section))]));
+          continue;
+        }
 
-      if (childSections.length) {
-        const dropdownId = `menu-dropdown-${section.id}`;
+        const dropdownId = `${listIdPrefix}-dropdown-${section.id}`;
         const dropdownList = createElement("ul", { className: "menu-dropdown", attributes: { id: dropdownId } });
-        const linkedPageLink = createLinkedPageLink(section);
-        if (linkedPageLink) dropdownList.appendChild(createElement("li", {}, [linkedPageLink]));
-        for (const childSection of childSections) dropdownList.appendChild(createElement("li", {}, [createSectionLink(childSection)]));
+        for (const dropdownSection of dropdownSections) {
+          // The button already shows the parent's menu name, so its own entry uses its "name in its dropdown"
+          // (set in Edit menu), or else its section title.
+          const entryText = dropdownSection === section
+            ? section.dropdown_label || section.title || getSectionMenuLabel(section)
+            : getSectionMenuLabel(dropdownSection);
+          dropdownList.appendChild(createElement("li", {}, [createSectionLink(dropdownSection, entryText)]));
+        }
         const toggleButton = createElement("button", {
           className: "menu-dropdown-toggle",
-          text: "▾",
-          attributes: {
-            type: "button",
-            "aria-expanded": "false",
-            "aria-controls": dropdownId,
-            "aria-label": `More under ${getSectionMenuLabel(section)}`,
-          },
-        });
+          attributes: { type: "button", "aria-expanded": "false", "aria-controls": dropdownId },
+        }, [
+          document.createTextNode(getSectionMenuLabel(section)),
+          createElement("span", { className: "menu-dropdown-caret", text: "▾", attributes: { "aria-hidden": "true" } }),
+        ]);
+        const menuItem = createElement("li", { className: "menu-item has-dropdown" }, [toggleButton, dropdownList]);
+        if (dropdownSections.some(linksToCurrentPage)) menuItem.classList.add("is-current");
         toggleButton.addEventListener("click", () => {
           const shouldOpen = !menuItem.classList.contains("is-open");
           closeAllMenuDropdowns(menuItem);
-          menuItem.classList.toggle("is-open", shouldOpen);
-          toggleButton.setAttribute("aria-expanded", String(shouldOpen));
+          setMenuItemOpen(menuItem, shouldOpen);
         });
         // Close when keyboard focus moves out of this item.
         menuItem.addEventListener("focusout", (focusEvent) => {
-          if (!menuItem.contains(focusEvent.relatedTarget)) {
-            menuItem.classList.remove("is-open");
-            toggleButton.setAttribute("aria-expanded", "false");
-          }
+          if (!menuItem.contains(focusEvent.relatedTarget)) setMenuItemOpen(menuItem, false);
         });
-        menuItem.classList.add("has-dropdown");
-        menuItem.append(toggleButton, dropdownList);
+        menuList.appendChild(menuItem);
       }
-      menuList.appendChild(menuItem);
+      return menuList;
     }
 
+    // The phone menu button: three horizontal lines (they turn into an X while the menu is open).
+    const compactToggle = createElement("button", {
+      className: "menu-compact-toggle",
+      attributes: { type: "button", "aria-label": "Open menu", "aria-expanded": "false", "aria-controls": "menu-compact-panel" },
+    }, [1, 2, 3].map(() => createElement("span", { className: "menu-compact-icon-line", attributes: { "aria-hidden": "true" } })));
+    compactToggle.addEventListener("click", () => setCompactMenuExpanded(!menuElement.classList.contains("is-compact-expanded")));
+    const compactPanel = createElement("div", { className: "menu-compact-panel", attributes: { id: "menu-compact-panel" } }, [buildMenuList("menu-compact")]);
+    const compactMenu = createElement("div", { className: "menu-compact" }, [compactToggle, compactPanel]);
+
     addMenuDropdownListeners();
-    menuElement.replaceChildren(menuList);
+    menuElement.classList.remove("is-compact-expanded");
+    menuElement.replaceChildren(buildMenuList("menu"), compactMenu);
     addStickyMenuListeners();
     updateStickyMenu();
   }
 
-  /* The menu sticks to the top while scrolling. This adds a faint shadow once it is stuck,
-     and tells the CSS how tall it is so jumping to a section doesn't hide the heading under it. */
+  /* Wider screens: the menu sticks to the top while scrolling, with a faint shadow once it is stuck.
+     Phones: the vertical menu stays in place, and once it has scrolled out of view the small "Menu" bar
+     shows at the top. Either way the CSS is told how much room the top bar takes, so jumping to a
+     section doesn't hide its heading. */
   function updateStickyMenu() {
     const menuElement = document.getElementById("menu");
-    if (!menuElement) return;
+    const mainMenuList = menuElement && menuElement.querySelector(":scope > .menu-list");
+    if (!mainMenuList) return;
+    const editing = document.body.classList.contains("editor-active");
+    if (PHONE_LAYOUT_QUERY.matches) {
+      const menuIsOutOfView = !editing && mainMenuList.getBoundingClientRect().bottom <= 0;
+      menuElement.classList.remove("is-stuck");
+      menuElement.classList.toggle("is-compact", menuIsOutOfView);
+      if (!menuIsOutOfView) setCompactMenuExpanded(false);
+      const compactToggle = menuElement.querySelector(".menu-compact-toggle");
+      document.documentElement.style.setProperty("--menu-height", `${compactToggle ? compactToggle.offsetHeight || 44 : 44}px`);
+      return;
+    }
+    menuElement.classList.remove("is-compact");
+    setCompactMenuExpanded(false);
     const isStuck = window.scrollY > 0 && menuElement.getBoundingClientRect().top <= 0;
     menuElement.classList.toggle("is-stuck", isStuck);
     document.documentElement.style.setProperty("--menu-height", `${menuElement.offsetHeight}px`);

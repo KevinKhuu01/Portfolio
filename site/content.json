@@ -49,7 +49,7 @@
       "body": "",
       "interests_title": "Interests",
       "items": [],
-      "menu_label": "About me"
+      "menu_label": "About"
     },
     {
       "id": "current-positions",
@@ -73,7 +73,7 @@
     },
     {
       "id": "experience",
-      "title": "Experience",
+      "title": "Professional Experience",
       "type": "entries",
       "items": [
         {
@@ -88,7 +88,8 @@
           ]
         }
       ],
-      "menu_label": "Experience"
+      "menu_label": "Experience",
+      "dropdown_label": "Professional"
     },
     {
       "id": "volunteer",
@@ -206,7 +207,7 @@
     },
     {
       "id": "projects",
-      "title": "Projects",
+      "title": "Personal & Coursework Projects",
       "type": "entries",
       "items": [
         {
@@ -301,16 +302,8 @@
           ]
         }
       ],
-      "menu_label": "Projects"
-    },
-    {
-      "id": "academics",
-      "title": "Academics",
-      "type": "page_link",
-      "body": "Ontario Tech University: Cumulative GPA 4.25 / 4.30 · President's List\nCentennial College: Cumulative GPA 4.50 / 4.50 · High Honours",
-      "page": "transcript",
-      "link_label": "Click here for my unofficial transcript",
-      "menu_label": "Academics"
+      "menu_label": "Projects",
+      "dropdown_label": "Personal & Coursework"
     },
     {
       "id": "course-map",
@@ -634,6 +627,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "academics",
+      "title": "Transcripts",
+      "type": "page_link",
+      "body": "Ontario Tech University: Cumulative GPA 4.25 / 4.30 · President's List\nCentennial College: Cumulative GPA 4.50 / 4.50 · High Honours",
+      "page": "transcript",
+      "link_label": "Click here for my unofficial transcript",
+      "menu_label": "Academics",
+      "dropdown_position": "last"
     },
     {
       "id": "resume",
